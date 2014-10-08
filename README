@@ -1,0 +1,40 @@
+This repository is meant to store reproducable experimental setups for:
+
+Title:    Modeling Rigid Contact at the Acceleration Level: Viable and Fast
+Authors:  Sam Zapolsky, Evan Drumwright
+
+INSTALLATION:
+  This package requires: 
+    Moby (simulator):         github.com/edrumwri/Moby 
+                              checkout version: 2c1b58619480d679e0790f247688279dbf5c00df
+
+    Ravelin (Linear Algebra): github.com/edrumwri/Ravelin 
+                              checkout version: 1674e5ea39aa22d996a81a9721cac9a2656891c2
+
+  Additional Requirements:
+    Open Scene Graph (Visualization): http://www.openscenegraph.org/
+      To visualize, run all examples with the additional option: -r, else remove this option
+
+RUNNING Experiments:
+  Single point contact
+    single_point_test
+
+  Rolling down slope with small hills (diverging paths)
+    Velocity Level:
+      moby-driver -r -s=0.001 -p=libsimplePlugin.so ball_on_hill.xml
+    Acceleration Level (sustained contact) [this work]
+      moby-driver -r -s=0.00101 -p=libsimplePlugin.so ball_on_hill.xml
+  
+  Spinning box
+    Velocity Level:
+      moby-driver -r -s=0.001 spinning-box.xml
+    Acceleration Level (sustained contact) [this work]
+      moby-driver -r -s=0.00101 spinning-box.xml
+  
+  Robot Walk
+    git clone github.com/samzapo/Locomotion
+    version: 9eca375ad36ff4630890fc60c4b80f8ccc64d3dc
+    Velocity Level:
+      moby-driver -r -s=0.001 -p=libLinksPlugin.so links1.xml
+    Acceleration Level (sustained contact) [this work]
+      moby-driver -r -s=0.00101 -p=libLinksPlugin.so links1.xml
