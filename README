@@ -32,7 +32,7 @@ RUNNING Experiments:
       moby-driver -r -s=0.00101 spinning-box.xml
   
   Robot Walk
-    git clone github.com/samzapo/Locomotion
+    git clone github.com/PositronicsLab/Pacer
     version: 9eca375ad36ff4630890fc60c4b80f8ccc64d3dc
     Velocity Level:
       moby-driver -r -s=0.001 -p=libLinksPlugin.so links1.xml
