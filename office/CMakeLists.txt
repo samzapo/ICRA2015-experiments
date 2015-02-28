@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 2.8.3)
 
-project(RollingSphere)
+project(Office)
 
 include (CheckIncludeFiles)
 include (CheckLibraryExists)
@@ -34,8 +34,7 @@ link_directories(
                   /usr/local/lib
                   )
 
-add_library(sphere-plugin MODULE sphere-plugin.cpp)
-add_library(gazebo-sphere-plugin SHARED sphere-plugin.cpp)
+add_library(office-init MODULE office-init.cpp)
 
 include (FindPkgConfig)
 IF(PKG_CONFIG_FOUND)
@@ -44,5 +43,4 @@ ENDIF(PKG_CONFIG_FOUND)
 include_directories(${GAZEBO_INCLUDE_DIRS})
 link_directories(${GAZEBO_LIBRARY_DIRS})
 
-target_link_libraries(sphere-plugin Moby Ravelin ${GAZEBO_LIBRARIES} ${BOOST_LIBRARIES} ${Boost_SYSTEM_LIBRARY} protobuf )
-target_link_libraries(gazebo-sphere-plugin Moby Ravelin ${GAZEBO_LIBRARIES} ${BOOST_LIBRARIES} ${Boost_SYSTEM_LIBRARY} protobuf )
+target_link_libraries(office-init Ravelin Moby ${GAZEBO_LIBRARIES} ${BOOST_LIBRARIES} ${Boost_SYSTEM_LIBRARY} protobuf )

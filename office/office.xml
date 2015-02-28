@@ -1,0 +1,59 @@
+<!-- A sphere undergoing sustained contact with the ground.  -->
+
+<XML>
+  <DRIVER>
+    <camera position="0 10 0" target="0 0 0" up="0 0 1" />
+    <window location="0 0" size="640 480" />
+  </DRIVER>
+
+  <MOBY>
+    <!-- Primitives -->
+    <Plane id="p3" rpy="1.5707963267949 0 0" />
+    <Box id="b3" xlen="10" ylen=".001" zlen="10" rpy="1.5707963267949 0 0" density="10.0" />
+    <!-- the ground -->
+    <RigidBody id="ground" enabled="false" visualization-id="b3" position="0 0 0" color="0 0 0 0">
+      <CollisionGeometry primitive-id="p3" />
+    </RigidBody>
+
+    <!-- Integrator -->
+    <RungeKuttaIntegrator id="rk4" />
+    <EulerIntegrator id="euler" />
+    <BulirschStoerIntegrator id="bsi" abs-err-tol="1e-6" rel-err-tol="1e-3" />
+
+    <!-- Gravity force -->
+    <GravityForce id="gravity" accel="0 0 -9.81"  />
+
+    <!-- Rigid bodies -->
+    <SDF id="sdf::1" filename="desk/model.sdf"/>
+    <SDF id="sdf::1" filename="book/model.sdf"/>
+    <SDF id="sdf::2" filename="book/model.sdf"/>
+    <SDF id="sdf::3" filename="book/model.sdf"/>
+    <SDF id="sdf::4" filename="book/model.sdf"/>
+    <SDF id="sdf::5" filename="book/model.sdf"/>
+    <SDF id="sdf::6" filename="book/model.sdf"/>
+
+
+    <!-- Setup the simulator -->
+    <EventDrivenSimulator id="simulator" integrator-id="bsi" Euler-step="1e-10" contact-dist-thresh="1e-13">
+      <DynamicBody dynamic-body-id="ground" />
+      
+      <DynamicBody dynamic-body-id="sdf::1::desk" />
+      <DynamicBody dynamic-body-id="sdf::1::book" />
+      <DynamicBody dynamic-body-id="sdf::2::book" />
+      <DynamicBody dynamic-body-id="sdf::3::book" />
+      <DynamicBody dynamic-body-id="sdf::4::book" />
+      <DynamicBody dynamic-body-id="sdf::5::book" />
+      <DynamicBody dynamic-body-id="sdf::6::book" />
+      
+      <RecurrentForce recurrent-force-id="gravity"  />
+      <ContactParameters object1-id="ground" object2-id="sdf::1::desk" epsilon="0" mu-coulomb="1" mu-viscous="0" friction-cone-edges="16" />
+      <ContactParameters object1-id="sdf::1::desk" object2-id="sdf::1::book" epsilon="0" mu-coulomb="1" mu-viscous="0" friction-cone-edges="16" />
+      <ContactParameters object1-id="sdf::1::book" object2-id="sdf::2::book" epsilon="0" mu-coulomb="1" mu-viscous="0" friction-cone-edges="16" />
+      <ContactParameters object1-id="sdf::2::book" object2-id="sdf::3::book" epsilon="0" mu-coulomb="1" mu-viscous="0" friction-cone-edges="16" />
+      <ContactParameters object1-id="sdf::3::book" object2-id="sdf::4::book" epsilon="0" mu-coulomb="1" mu-viscous="0" friction-cone-edges="16" />
+      <ContactParameters object1-id="sdf::4::book" object2-id="sdf::5::book" epsilon="0" mu-coulomb="1" mu-viscous="0" friction-cone-edges="16" />
+      <ContactParameters object1-id="sdf::5::book" object2-id="sdf::6::book" epsilon="0" mu-coulomb="1" mu-viscous="0" friction-cone-edges="16" />
+    </EventDrivenSimulator>
+  </MOBY>
+</XML>
+

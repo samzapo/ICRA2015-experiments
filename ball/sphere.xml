@@ -21,7 +21,7 @@
     <GravityForce id="gravity" accel="0 0 -9.81"  />
 
     <!-- Rigid bodies -->
-       <SDF filename="bowling_ball/model.sdf"/>
+       <SDF id="" filename="bowling_ball/model.sdf"/>
 
       <!-- the ground -->
       <RigidBody id="ground" enabled="false" visualization-id="b3" position="0 0 0" color="0 0 0 0">
@@ -30,10 +30,10 @@
 
     <!-- Setup the simulator -->
     <EventDrivenSimulator id="simulator" integrator-id="bsi" Euler-step="1e-10" contact-dist-thresh="1e-13">
-      <DynamicBody dynamic-body-id="sphere" />
+      <DynamicBody dynamic-body-id="::sphere" />
       <DynamicBody dynamic-body-id="ground" />
       <RecurrentForce recurrent-force-id="gravity"  />
-      <ContactParameters object1-id="ground" object2-id="sphere" epsilon="0" mu-coulomb="1" mu-viscous="0" friction-cone-edges="1024" />
+      <ContactParameters object1-id="ground" object2-id="::sphere" epsilon="0" mu-coulomb=".1" mu-viscous="0" friction-cone-edges="1024" />
     </EventDrivenSimulator>
   </MOBY>
 </XML>
