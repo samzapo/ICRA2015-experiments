@@ -10,21 +10,22 @@ This repository is meant to store reproducable experimental setups for:
 
 ## INSTALLATION:
 ###  This package requires: 
-    Moby (simulator)        : `github.com/PositronicsLab/Moby`
-                      branch: `stable-int`
-                     version: `1d930bdb1839304e692bb9b07d7228cade6bddfa`
+Moby (simulator)        : `github.com/PositronicsLab/Moby`
+                  branch: `stable-int`
+                 version: `1d930bdb1839304e692bb9b07d7228cade6bddfa`
 
-    Ravelin (Linear Algebra): `github.com/PositronicsLab/Ravelin`
-                      branch: `master`
-                     version: `36abb0ce6fffc85860581378f3b7e39e5af14d92`
+Ravelin (Linear Algebra): `github.com/PositronicsLab/Ravelin`
+                  branch: `master`
+                 version: `36abb0ce6fffc85860581378f3b7e39e5af14d92`
 
 
-    Pacer (Robot control)   : `github.com/PositronicsLab/Pacer`
-                      branch: `IROS2015`
-                     version: *most recent*
+Pacer (Robot control)   : `github.com/PositronicsLab/Pacer`
+                  branch: `IROS2015`
+                 version: *most recent*
 ###  Additional Requirements:
-    Open Scene Graph (Visualization): http://www.openscenegraph.org/
-      To visualize, run all examples with the additional option: -r, else remove this option
+Open Scene Graph (Visualization): http://www.openscenegraph.org/
+  
+To visualize, run all examples with the additional option: -r, else remove this option
 
 ## To run a set of experiments: 
 ```
