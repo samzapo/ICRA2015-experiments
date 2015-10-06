@@ -1,9 +1,12 @@
 # IROS Experimental Repository (2015)
 This repository is meant to store reproducable experimental setups for:
 
-Title:    Adaptive Integration for Controlling Speed vs. Accuracy in Multi-Rigid Body Simulation
-Authors:  Sam Zapolsky, Evan Drumwright
-Inproc.:  The 2015 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS 2015), Hamburg, Germany, Sep 2015
+###Title:    
+`Adaptive Integration for Controlling Speed vs. Accuracy in Multi-Rigid Body Simulation`
+###Authors:  
+`Sam Zapolsky, Evan Drumwright`
+###Inproc.:  
+`The 2015 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS 2015), Hamburg, Germany, Sep 2015`
 
 ## INSTALLATION:
 ###  This package requires: 
